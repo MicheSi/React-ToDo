@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
-import Task from './components/TodoComponents/Todo';
 import TodoForm from './components/TodoComponents/TodoForm';
+
+import "./components/TodoComponents/Todo.css";
 
 const tasks = [
     {
@@ -44,20 +45,29 @@ class App extends React.Component {
       if (task.id === id) {
         return {
           ...task,
-          completed: !task.purchased
+          completed: !task.completed
         };
       } else {
         return task;
       }
-    })
+    });
+    this.setState({
+      todoList: newTaskList
+    });
+  }
+
+  clearCompleted = completed => {
+    
   }
 
   render() {
     return (
-      <div>
-        <h2>My To Do List</h2>
-        <TodoForm addTask={this.addTask}/>
-        <TodoList tasks={this.state.todoList}/>
+      <div className='App'>
+        <div className='header'>
+          <h2>My To Do List</h2>
+          <TodoForm addTask={this.addTask}/>
+        </div>
+        <TodoList tasks={this.state.todoList} toggleTask={this.toggleTask}/>
       </div>
     );
   }

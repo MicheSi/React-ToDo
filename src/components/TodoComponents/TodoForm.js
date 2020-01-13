@@ -18,6 +18,7 @@ class TodoForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.addTask(this.state.todoText);
+        this.setState({todoText: ''})
     }
 
     render() {
