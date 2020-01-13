@@ -1,16 +1,11 @@
 import React from 'react';
 
-const todo = [
-    {
-        task: 'Wash laundry',
-        id: 1,
-        completed: false
-    },
-    {
-        task: 'Clean the house',
-        id: 2,
-        completed: false
-    }
-]
+const Task = props => {
+    return (
+        <div className='task'>
+            <p>{props.task.task}</p>
+        </div>
+    )
+} 
 
-export default todo;
+export default Task;
