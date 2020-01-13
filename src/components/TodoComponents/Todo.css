@@ -3,28 +3,49 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: lightslategray;
+    background-image: url('./bgImage.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
+
 
 .App {
     text-align: center;
-    max-width: 900px;
+    justify-content: center;
 }
 
 .header {
     align-items: center;
 }
 
+.header h2 {
+    
+}
+
 .todoList {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
 }
 
 .task {
-    background-color: lightsteelblue;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: tan;
+    width: 250px;
+    height: 50px;
+    margin: 1% 0;
+    border-radius: 5px;
+    border: 1px solid saddlebrown;
 }
 
 .task.completed {
@@ -33,4 +54,26 @@ body {
 
 .taskcompleted {
     text-decoration: line-through;
+}
+
+button {
+    width: 125px;
+    height: 40px;
+    background-color: tan;
+    border-color: saddlebrown;
+    border-radius: 5px;
+}
+
+.addBtn {
+    margin-left: 2%;
+}
+
+.clearBtn {
+    width: 175px;
+}
+
+input {
+    width: 400px;
+    height: 24px;
+    background-color: linen;
 }
