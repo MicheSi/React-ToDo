@@ -25,6 +25,7 @@ class TodoForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input 
+                required
                 type='text'
                 name='task'
                 value={this.state.todoText}
