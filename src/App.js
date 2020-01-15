@@ -35,10 +35,34 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     };
-    this.setState({
-      todoList: [...this.state.todoList, newTask]
-    })
+    console.log(newTask)
+    
+      this.state.todoList.map(task => {
+        if (task.task.toLowerCase() === newTask.task.toLowerCase()) {
+          alert('Task is already on list');
+          this.setState({
+            todoList: [...this.state.todoList]
+          })
+        } else {
+          this.setState({
+            todoList: [...this.state.todoList, newTask]
+          })
+        }
+      })
   }
+  //   const taskName = this.state.todoList.map(task => {
+  //     if (task.task.toLowerCase() === newTask.task.toLowerCase()) {
+  //       return alert("Task already on list")
+  //     } else {
+        
+  //       this.setState({
+  //         todoList: [...this.state.todoList, newTask]
+  //       })
+  //     }
+      
+  //   })
+  //   console.log(taskName)
+  // }
   
   toggleTask = id => {
     const newTaskList = this.state.todoList.map(task => {
